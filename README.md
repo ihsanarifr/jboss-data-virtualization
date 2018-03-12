@@ -1,7 +1,7 @@
 # Learn Red Hat JBoss Data Virtualization Middleware
 Practice learning data virtualization using Redhat Jboss Data Virtualization Middleware to develop, data virtual, data caching, data deployment. Its many data consumers include : Bussiness intellegence tools and analytical applications, mobile and enterprise applications, enterprise service bus, Extract-transform-load (ETL) and SOA apps and portals.
 
-# Many Data sources
+## Many Data sources
 * NoSQL
 * Hadoop
 * Relational databases and warehoses
@@ -11,7 +11,7 @@ Practice learning data virtualization using Redhat Jboss Data Virtualization Mid
 * SaaS and cloud applications
 * Red Hat JBoss Data Grid (high-sped data caching)
 
-# Software Requirement
+## Software Requirement
 * Postgre 9.6.2
 * Red Hat JBoss Data Virtualization 6.3
 * Red Hat JBoss EAP 6.4
