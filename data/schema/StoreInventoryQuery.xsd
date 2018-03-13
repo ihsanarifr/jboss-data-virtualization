@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://jb450.jboss.org/inventory/query"
+    xmlns:tns1="http://jb450.jboss.org/inventory/query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="StoreCode" type="xs:string"/>
+</xs:schema>
