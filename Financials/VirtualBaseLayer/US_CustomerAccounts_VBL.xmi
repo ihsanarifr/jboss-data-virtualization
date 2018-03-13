@@ -85,7 +85,7 @@
   <transformation:TransformationContainer xmi:uuid="mmuuid:560564ce-bb7f-4f0d-8c9d-a0a51183be8c">
     <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:9d3138b4-ec64-407b-af2b-7739ca9e7a1a" outputs="mmuuid/07a62aac-23ad-42f9-bf37-043d9c11ca8d" target="mmuuid/07a62aac-23ad-42f9-bf37-043d9c11ca8d">
       <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:2b8687f0-755b-436a-bbcd-421b40bc1595">
-        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:2a10da7b-2162-4c4e-b6ac-a8b12a854496" selectSql="SELECT * FROM US_CustomersAcounts.account"/>
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:2a10da7b-2162-4c4e-b6ac-a8b12a854496" selectSql="SELECT US_CustomersAcounts.account.accountid, US_CustomersAcounts.account.ssn AS customerid, US_CustomersAcounts.account.accounttype, US_CustomersAcounts.account.accountstatus, US_CustomersAcounts.account.dateopened, US_CustomersAcounts.account.dateclosed FROM US_CustomersAcounts.account"/>
         <aliases xmi:uuid="mmuuid:de4ee957-a970-49c3-89a2-ea9422036bb3" alias="account">
           <aliasedObject href="../DataSources/US_CustomersAcounts.xmi#mmuuid/6547c77c-abf5-4ff4-badb-bee24e6e8a0d"/>
         </aliases>
