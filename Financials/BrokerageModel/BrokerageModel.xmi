@@ -10,7 +10,8 @@
   <diagram:DiagramContainer xmi:uuid="mmuuid:8b173a54-78f4-45f0-b47a-dea6b3de4476">
     <diagram xmi:uuid="mmuuid:da9b0a5a-4129-42c5-9b01-4b0de01a2091" type="packageDiagramType" target="mmuuid/518d6fd8-bc07-4037-8176-1061707a45f4">
       <diagramEntity xmi:uuid="mmuuid:10021f8e-8dd9-4fa3-9fdd-e171e1120775" modelObject="mmuuid/cba4be6a-398e-485f-a2c4-757d1d0f2eae" xPosition="40" yPosition="30"/>
-      <diagramEntity xmi:uuid="mmuuid:c4a4c3f6-eba0-4f0f-91a6-5df652071c9d" modelObject="mmuuid/6bac2eec-fd9e-4b85-8e48-f1b96851d1b6"/>
+      <diagramEntity xmi:uuid="mmuuid:c4a4c3f6-eba0-4f0f-91a6-5df652071c9d" modelObject="mmuuid/6bac2eec-fd9e-4b85-8e48-f1b96851d1b6" xPosition="16" yPosition="334"/>
+      <diagramEntity xmi:uuid="mmuuid:60e2b0ab-6a64-4e57-b683-2d2843ed4411" modelObject="mmuuid/28ea5e36-3860-4257-9d69-d38c76f7ce85" xPosition="451" yPosition="42"/>
     </diagram>
   </diagram:DiagramContainer>
   <mmcore:AnnotationContainer xmi:uuid="mmuuid:efb1b16e-0cea-40d4-96cb-df7e32186082">
@@ -782,6 +783,13 @@
       <inputs href="../AllCustomerAccounts/AllCustomerAccounts.xmi#mmuuid/8696d20a-79e1-4988-9561-dc78512a122e"/>
       <inputs href="#mmuuid/cba4be6a-398e-485f-a2c4-757d1d0f2eae"/>
     </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:8c137c5e-eb14-4684-b79c-6a3f8adaba29" inputs="mmuuid/cba4be6a-398e-485f-a2c4-757d1d0f2eae" outputs="mmuuid/28ea5e36-3860-4257-9d69-d38c76f7ce85" target="mmuuid/28ea5e36-3860-4257-9d69-d38c76f7ce85">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:3a4d0fcf-b68f-4e06-b2af-28c4ae63ad81">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:6f580c50-1118-4d9f-86df-01df6c532dc2" selectSql="BEGIN&#xa;&#x9;DECLARE bigdecimal VARIABLES.TotalValue;&#xa;&#x9;VARIABLES.TotalValue = 0;&#xa;&#x9;LOOP ON (SELECT BrokerageModel.AccountHoldings.&quot;value&quot; FROM BrokerageModel.AccountHoldings WHERE BrokerageModel.AccountHoldings.issuer = BrokerageModel.GetPortfolioValue.issuer) AS issuerCursor&#xa;&#x9;BEGIN&#xa;&#x9;&#x9;VARIABLES.TotalValue = (VARIABLES.TotalValue + issuerCursor.&quot;value&quot;);&#xa;&#x9;END&#xa;&#x9;SELECT VARIABLES.TotalValue;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:62227d25-90ff-4a74-b741-aa7943945641" alias="AccountHoldings" aliasedObject="mmuuid/cba4be6a-398e-485f-a2c4-757d1d0f2eae"/>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:557c1395-c03f-486c-92a6-4c19b1bbc168" outputs="mmuuid/2856040e-8365-46d5-980e-65961c64d8f5"/>
+    </transformationMappings>
   </transformation:TransformationContainer>
   <relational:BaseTable xmi:uuid="mmuuid:6bac2eec-fd9e-4b85-8e48-f1b96851d1b6" name="AccountValue">
     <columns xmi:uuid="mmuuid:29f3ce6d-db9f-4749-9326-5ec2d14b8952" name="customerid" length="12" nullable="NO_NULLS" updateable="false">
@@ -794,4 +802,14 @@
       <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#bigdecimal"/>
     </columns>
   </relational:BaseTable>
+  <relational:Procedure xmi:uuid="mmuuid:28ea5e36-3860-4257-9d69-d38c76f7ce85" name="GetPortfolioValue">
+    <parameters xmi:uuid="mmuuid:2b605738-9ffa-44c0-8889-929a76c366f5" name="issuer" length="10" nullable="NULLABLE_UNKNOWN" radix="0">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </parameters>
+    <result xmi:uuid="mmuuid:b2a0e4c0-91fe-45df-ba2f-d537c81c95a0" name="TotalValue">
+      <columns xmi:uuid="mmuuid:2856040e-8365-46d5-980e-65961c64d8f5" name="TotalValue">
+        <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#bigdecimal"/>
+      </columns>
+    </result>
+  </relational:Procedure>
 </xmi:XMI>
