@@ -32,10 +32,10 @@
     <columns xmi:uuid="mmuuid:c381ce83-4db6-4c25-a14d-945cba426b32" name="zipcode" nativeType="varchar" length="15" nullable="NO_NULLS" updateable="false">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
-    <columns xmi:uuid="mmuuid:798ac675-333f-4f05-bf1c-7148586c1f40" name="phone" nativeType="varchar" length="30" defaultValue="NULL::character varying" updateable="false">
+    <columns xmi:uuid="mmuuid:8261e261-e27f-4935-a008-bb00814a3d7c" name="country" length="2">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
-    <columns xmi:uuid="mmuuid:8261e261-e27f-4935-a008-bb00814a3d7c" name="Country" length="2">
+    <columns xmi:uuid="mmuuid:798ac675-333f-4f05-bf1c-7148586c1f40" name="phone" nativeType="varchar" length="30" defaultValue="NULL::character varying" updateable="false">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
     <primaryKey xmi:uuid="mmuuid:6bf0c320-e294-4a56-80d0-263910c5c9b0" name="customer_pkey" columns="mmuuid/875215a0-f95e-4885-979a-0f0dd0a1703c"/>
@@ -43,7 +43,7 @@
   <transformation:TransformationContainer xmi:uuid="mmuuid:894e5758-91a4-40a0-94f6-9d29d8ecd90e">
     <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:833592ca-1116-4aab-bb47-430b71859798" outputs="mmuuid/9d5fba41-6d90-4479-ac42-ae23dddd5b65" target="mmuuid/9d5fba41-6d90-4479-ac42-ae23dddd5b65">
       <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:5bee6cad-883c-465d-ba17-868ea8f8eb66">
-        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:4099e22b-db17-4b32-98da-d3f1a7f06e54" selectSql="SELECT 'US' AS customerid, US_Customers.customer.firstname, US_Customers.customer.lastname, US_Customers.customer.middleinitial AS middlename, US_Customers.customer.streetaddress1, US_Customers.customer.aptnumber, US_Customers.customer.city, US_Customers.customer.state, US_Customers.customer.zipcode, US_Customers.customer.phone, 'US' AS Country FROM US_Customers.customer"/>
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:4099e22b-db17-4b32-98da-d3f1a7f06e54" selectSql="SELECT 'US' AS customerid, US_Customers.customer.firstname, US_Customers.customer.lastname, US_Customers.customer.middleinitial AS middlename, US_Customers.customer.streetaddress1, US_Customers.customer.aptnumber, US_Customers.customer.city, US_Customers.customer.state, US_Customers.customer.zipcode, 'US' AS Country, US_Customers.customer.phone FROM US_Customers.customer"/>
         <aliases xmi:uuid="mmuuid:9db88116-fdfb-4729-8dd8-e111d6a5ae5b" alias="customer">
           <aliasedObject href="../Datasources/US_Customers.xmi#mmuuid/8e6e1b72-9aba-4f10-a5cf-156873987276"/>
         </aliases>

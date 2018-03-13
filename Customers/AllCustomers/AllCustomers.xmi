@@ -33,10 +33,10 @@
     <columns xmi:uuid="mmuuid:b0d638d8-7e74-44e8-aab2-b7fc5d43f948" name="zipcode" nativeType="varchar" length="15" nullable="NO_NULLS" updateable="false">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
-    <columns xmi:uuid="mmuuid:8ef3d84a-3d5b-479e-8b7f-279dc837ef91" name="phone" nativeType="varchar" length="30" defaultValue="NULL::character varying" updateable="false">
+    <columns xmi:uuid="mmuuid:86bebbab-6ee7-40d4-a70d-36004ff6dd4d" name="country" length="2">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
-    <columns xmi:uuid="mmuuid:86bebbab-6ee7-40d4-a70d-36004ff6dd4d" name="Country" length="2">
+    <columns xmi:uuid="mmuuid:8ef3d84a-3d5b-479e-8b7f-279dc837ef91" name="phone" nativeType="varchar" length="30" defaultValue="NULL::character varying" updateable="false">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
     <primaryKey xmi:uuid="mmuuid:d4af2854-4f27-4a58-917c-9455dfc995fc" name="customer_pkey" columns="mmuuid/d8130afe-cc14-4240-aa20-eaf4f97a9e2f"/>
