@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://metamatrix.com/customerholdings/schema"
+    xmlns:conn="http://www.metamatrix.com/metabase/3.0/metamodels/Connections.xml"
+    xmlns:dgm="http://www.metamatrix.com/metabase/3.0/metamodels/Diagram.xml"
+    xmlns:mm="http://www.metamatrix.com/metabase/3.0/metamodels/XMLSchema.xml"
+    xmlns:sdt="http://www.metamatrix.com/metabase/3.0/metamodels/SimpleDatatypes.xml"
+    xmlns:tnsOutput="http://metamatrix.com/customerholdings/schema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="Customers" type="tnsOutput:CustomerListType"/>
+<xsd:complexType name="CustomerListType">
+  <xsd:complexContent>
+  <xsd:restriction base="xsd:anyType">
+    <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="Customer" type="tnsOutput:CustomerType"/>
+    </xsd:sequence>
+  </xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+    <xsd:complexType name="CustomerType">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="CustomerID" type="xsd:string"/>
+                    <xsd:element name="FName" type="xsd:string"/>
+                    <xsd:element name="MName" type="xsd:string"/>
+                    <xsd:element name="LName" type="xsd:string"/>
+                    <xsd:element name="Country" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>
