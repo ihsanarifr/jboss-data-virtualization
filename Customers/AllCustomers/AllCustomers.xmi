@@ -88,6 +88,13 @@
       <inputs href="../VirtualBaseLayer/US_Customers_VBL.xmi#mmuuid/9d5fba41-6d90-4479-ac42-ae23dddd5b65"/>
       <inputs href="../VirtualBaseLayer/EU_Customers_VBL.xmi#mmuuid/c7c373c8-7c1c-4483-b09d-1769c117a29e"/>
     </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:c8640683-11a6-4b22-88e2-be2e9a1cbaed" inputs="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4" outputs="mmuuid/430f2637-9dda-4b7f-9b98-8a3a9fc61769" target="mmuuid/430f2637-9dda-4b7f-9b98-8a3a9fc61769">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:50b781d8-3a62-4d57-8324-59e8ca1ddd50">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:95536db4-1320-4faa-8265-ae5349dafc07" selectSql="BEGIN&#xa;&#x9;SELECT CONCAT(AllCustomers.customer.firstname, CONCAT(' ', CONCAT(AllCustomers.customer.middlename, CONCAT(' ', AllCustomers.customer.lastname)))) AS name FROM AllCustomers.customer;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:b69df777-88c5-4bdb-8989-d10414170d23" alias="customer" aliasedObject="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4"/>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:a6a2b113-d752-4c39-847f-dcd7bb78ab14" outputs="mmuuid/00e4bd0f-e418-4971-8d04-db83d81ea03b"/>
+    </transformationMappings>
   </transformation:TransformationContainer>
   <mmcore:AnnotationContainer xmi:uuid="mmuuid:aaaa1771-ada8-4cc5-9a34-30702f0f4eb2">
     <annotations xmi:uuid="mmuuid:16308534-df7d-4204-9a53-589c28aa7be0" annotatedObject="mmuuid/cf0d0c0b-88e8-4dbc-b3f9-38b20b603254">
@@ -760,6 +767,18 @@
   <diagram:DiagramContainer xmi:uuid="mmuuid:9d45ec87-8065-48af-8079-bf02bd6907f5">
     <diagram xmi:uuid="mmuuid:d9a9a6b6-71aa-4eeb-9669-9da0d06cfc16" type="packageDiagramType" target="mmuuid/cf0d0c0b-88e8-4dbc-b3f9-38b20b603254">
       <diagramEntity xmi:uuid="mmuuid:6fc67a23-12ad-4ebd-b35c-456dc595eccd" modelObject="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4" xPosition="10" yPosition="10"/>
+      <diagramEntity xmi:uuid="mmuuid:f386c04a-8837-4e76-a256-27756a9f7527" modelObject="mmuuid/430f2637-9dda-4b7f-9b98-8a3a9fc61769" xPosition="573" yPosition="86"/>
     </diagram>
   </diagram:DiagramContainer>
+  <relational:Procedure xmi:uuid="mmuuid:430f2637-9dda-4b7f-9b98-8a3a9fc61769" name="GetCustomerName">
+    <parameters xmi:uuid="mmuuid:e3f29f93-7577-4867-84dc-68b830fb4440" name="custid" length="12" nullable="NULLABLE_UNKNOWN" radix="0">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </parameters>
+    <result xmi:uuid="mmuuid:60c2089b-11d5-41c7-a2fb-500715fef0da" name="ProcedureResult">
+      <columns xmi:uuid="mmuuid:00e4bd0f-e418-4971-8d04-db83d81ea03b" name="name" length="100" radix="0">
+        <nativeType xsi:nil="true"/>
+        <type href="http://www.w3.org/2001/XMLSchema#string"/>
+      </columns>
+    </result>
+  </relational:Procedure>
 </xmi:XMI>
