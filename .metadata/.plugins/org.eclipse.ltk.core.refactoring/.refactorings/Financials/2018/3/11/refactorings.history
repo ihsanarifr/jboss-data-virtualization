@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename of resource" description="Rename of resource" flags="6" id="org.teiid.designer.ui.refactor.rename" input="DataSources/US_Customers.xmi" name="US_CustomersAcounts.xmi" stamp="1520839277119"/>&#x0A;<refactoring comment="Rename of resource" description="Rename of resource" flags="6" id="org.teiid.designer.ui.refactor.rename" input="DataSources/EU_Customers.xmi" name="EU_CustomersAccounts.xmi" stamp="1520839574038"/>
-</session>

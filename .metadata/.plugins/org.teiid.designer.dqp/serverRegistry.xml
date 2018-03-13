@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<servers>
-  <server default="true" host="localhost" parentServerId="Red Hat JBoss EAP 6.1+1520845516025" version="8.12.5">
-    <admin password="VE9LIyMhVUZBeGFlX0RxY05nVk1heGdidVZzdTQ0MHY1NG93UUVMdHJIbmVsMVVGM0tmcXFLbnBabFE2UWFlMmYtbUhDM2xJVDBaWUtVUVBCMV9PV2dha1hvd2c=" port="9999" secure="false" user="admin"/>
-    <jdbc jdbcpassword="VE9LIyMhckFBS1JFTV9GMEYydG1GSE1BOG5QekNZcU90ZThrRTRsd2ljRXNFRDNuWC1EQmIzTzBuWmZmU2JPcTVMWERUd3huOFAydW11c1B0NFdfQ0FTbDRWR0E=" jdbcport="31000" jdbcportoverride="31000" jdbcsecure="false" jdbcuser="teiidUser"/>
-  </server>
-</servers>

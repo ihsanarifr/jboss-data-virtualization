@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete of resource(s)" deleteContents="false" description="Delete of resource(s)" element1="/Customers/VirtualBaseLayer/EU_Customers_VBL.xmi" flags="6" id="org.teiid.designer.ui.refactor.delete" resources="1" stamp="1520844532478"/>
-</session>
