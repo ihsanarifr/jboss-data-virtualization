@@ -47,7 +47,7 @@
     <foreignKeys xmi:uuid="mmuuid:fdcb45b4-e91e-4fc0-9d32-c7131f88d76a" name="FK_AcctHoldings_AcctID" foreignKeyMultiplicity="UNSPECIFIED" primaryKeyMultiplicity="UNSPECIFIED" columns="mmuuid/e8a491d2-3115-4fd0-8772-42b5bb2b5af7" uniqueKey="mmuuid/9dbd4573-a3a5-4d14-8c69-39d23c2933df"/>
     <primaryKey xmi:uuid="mmuuid:359e6459-2003-4368-b3b7-c17f707365c6" name="accountholdings_pkey" columns="mmuuid/07db2d81-4156-482f-a967-0f1a00d792e6"/>
   </relational:BaseTable>
-  <relational:BaseTable xmi:uuid="mmuuid:f73f29d9-a048-45cc-ba65-79ea2ac6398f" name="customer" supportsUpdate="false">
+  <relational:BaseTable xmi:uuid="mmuuid:f73f29d9-a048-45cc-ba65-79ea2ac6398f" name="customer" supportsUpdate="false" materialized="true">
     <columns xmi:uuid="mmuuid:0c7e8f46-2abe-483a-96ef-eadda9b44465" name="customerid" nativeType="varchar" length="12" nullable="NO_NULLS" updateable="false" uniqueKeys="mmuuid/1bb01b3d-f6f4-4c24-82ef-a81f39818c1d">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </columns>
@@ -145,7 +145,7 @@
     </transformationMappings>
     <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:19dd400d-ea6d-4a92-9e12-3049c1c8f333" outputs="mmuuid/f73f29d9-a048-45cc-ba65-79ea2ac6398f" target="mmuuid/f73f29d9-a048-45cc-ba65-79ea2ac6398f">
       <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:47039016-d191-423f-afeb-e293b8adefa4">
-        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:fdbd8fa8-2483-449c-a868-634e0e42b7cb" selectSql="SELECT&#xa;&#x9;&#x9;*&#xa;&#x9;FROM&#xa;&#x9;&#x9;EU_CustomerAccounts_VBL.customer&#xa;UNION ALL&#xa;SELECT&#xa;&#x9;&#x9;*&#xa;&#x9;FROM&#xa;&#x9;&#x9;US_CustomerAccounts_VBL.customer"/>
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:fdbd8fa8-2483-449c-a868-634e0e42b7cb" selectSql="/*+ cache(ttl:86400000) */&#xa;SELECT&#xa;&#x9;&#x9;*&#xa;&#x9;FROM&#xa;&#x9;&#x9;EU_CustomerAccounts_VBL.customer&#xa;UNION ALL&#xa;SELECT&#xa;&#x9;&#x9;*&#xa;&#x9;FROM&#xa;&#x9;&#x9;US_CustomerAccounts_VBL.customer"/>
         <aliases xmi:uuid="mmuuid:25de4346-845c-4c35-8dd0-a082e9070e21" alias="customer">
           <aliasedObject href="../VirtualBaseLayer/EU_CustomerAccounts_VBL.xmi#mmuuid/9e7bfc1e-284b-42ef-bb7d-24ab26f90c41"/>
         </aliases>
