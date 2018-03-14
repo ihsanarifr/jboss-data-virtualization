@@ -189,6 +189,13 @@
       <inputs href="../VirtualBaseLayer/EU_CustomerAccounts_VBL.xmi#mmuuid/9e7bfc1e-284b-42ef-bb7d-24ab26f90c41"/>
       <inputs href="../VirtualBaseLayer/US_CustomerAccounts_VBL.xmi#mmuuid/b835094e-0f58-4251-8394-62f701513825"/>
     </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:4d6441d4-9531-4532-b2b2-e60ed30bab07" inputs="mmuuid/8696d20a-79e1-4988-9561-dc78512a122e" outputs="mmuuid/315cdaec-ba9c-40f7-9123-e43a8d07a531" target="mmuuid/315cdaec-ba9c-40f7-9123-e43a8d07a531">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:3e091836-5023-4fb4-9411-0aeb49cea827">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:3a85f6e7-6667-4811-bef3-86c09bd3890a" selectSql="BEGIN&#xa;&#x9;SELECT XMLELEMENT(NAME account, XMLAGG(XMLELEMENT(NAME account, XMLFOREST(AllCustomerAccounts.account.accountid, AllCustomerAccounts.account.customerid, AllCustomerAccounts.account.accounttype, AllCustomerAccounts.account.accountstatus, AllCustomerAccounts.account.dateopened)))) AS xmlResult FROM AllCustomerAccounts.account WHERE AllCustomerAccounts.account.accountid = AllCustomerAccounts.GetAccountInfo.accountid;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:0d9517da-54de-423e-a104-623564903f34" alias="account" aliasedObject="mmuuid/8696d20a-79e1-4988-9561-dc78512a122e"/>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:e6440b7e-e8ac-4d65-9cba-14641b13050c" inputs="mmuuid/47d699b8-a393-4bfa-831a-9a6ba6a7f55a mmuuid/264c760a-5593-4d26-9dd7-d0b41802db1a mmuuid/c250a47d-9655-4a14-9aea-787b719eebbc mmuuid/484e1b1b-725c-4944-9032-8b6d5d925c3d mmuuid/30a7d74e-e5ff-4fec-b7a5-2356d54b53f1" outputs="mmuuid/9a9c1469-ca1a-4da0-8a66-3bf9702d5c3a"/>
+    </transformationMappings>
   </transformation:TransformationContainer>
   <mmcore:AnnotationContainer xmi:uuid="mmuuid:d353fabe-7267-4915-90cc-81bc19bb6a38">
     <annotations xmi:uuid="mmuuid:1e4e4e0f-2ace-4cc8-a4e1-a788a449a5a4" annotatedObject="mmuuid/d94d2ba5-39d7-45c8-8a1d-265162038acc">
@@ -857,12 +864,27 @@
     <annotations xmi:uuid="mmuuid:f223dd6a-7869-4e45-931c-632aeda1d815" annotatedObject="mmuuid/095f8367-ee49-41c6-b299-8d24435f8b8d">
       <tags xmi:uuid="mmuuid:effa4e7d-3a99-4052-a0ab-8dd840de1a11" key="en_US" value="The description of this procedure."/>
     </annotations>
+    <annotations xmi:uuid="mmuuid:60ba652d-a8d7-484e-90b0-1ab788f21e10" annotatedObject="mmuuid/315cdaec-ba9c-40f7-9123-e43a8d07a531">
+      <tags xmi:uuid="mmuuid:af63ee4c-396c-4a9a-b24a-31df852ffedd" key="REST:METHOD" value="GET"/>
+      <tags xmi:uuid="mmuuid:b17f9b14-903e-4a7b-9a0a-0c38e06f9ea1" key="REST:URI" value="AccountInfo/{accountid}"/>
+    </annotations>
   </mmcore:AnnotationContainer>
   <diagram:DiagramContainer xmi:uuid="mmuuid:34d08638-19fd-4522-8a39-74563703fc58">
     <diagram xmi:uuid="mmuuid:e7e40fd5-100d-4565-ab0d-2bee961ab710" type="packageDiagramType" target="mmuuid/d94d2ba5-39d7-45c8-8a1d-265162038acc">
       <diagramEntity xmi:uuid="mmuuid:54dce435-5e25-4ec1-aa95-d909440146f2" modelObject="mmuuid/8696d20a-79e1-4988-9561-dc78512a122e" xPosition="30" yPosition="175"/>
       <diagramEntity xmi:uuid="mmuuid:6445037d-c905-41e4-a418-6875a0e77aa7" modelObject="mmuuid/b2bc181d-9a6e-4fd0-bfd8-37d638176a6e" xPosition="314" yPosition="30"/>
       <diagramEntity xmi:uuid="mmuuid:0a420375-d7f3-4974-b849-d51e4f2b5053" modelObject="mmuuid/f73f29d9-a048-45cc-ba65-79ea2ac6398f" xPosition="322" yPosition="299"/>
+      <diagramEntity xmi:uuid="mmuuid:4311b1bc-4c2f-44b7-adb2-d503dd78a955" modelObject="mmuuid/315cdaec-ba9c-40f7-9123-e43a8d07a531" xPosition="639" yPosition="206"/>
     </diagram>
   </diagram:DiagramContainer>
+  <relational:Procedure xmi:uuid="mmuuid:315cdaec-ba9c-40f7-9123-e43a8d07a531" name="GetAccountInfo">
+    <parameters xmi:uuid="mmuuid:749a9a78-9938-48cf-9a4b-1bc555e031d3" name="accountid" length="10" nullable="NULLABLE_UNKNOWN" radix="0">
+      <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#bigdecimal"/>
+    </parameters>
+    <result xmi:uuid="mmuuid:532b275c-8d37-44d2-bc53-7300c543f921" name="xmlResult">
+      <columns xmi:uuid="mmuuid:9a9c1469-ca1a-4da0-8a66-3bf9702d5c3a" name="xmlResult">
+        <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#XMLLiteral"/>
+      </columns>
+    </result>
+  </relational:Procedure>
 </xmi:XMI>
