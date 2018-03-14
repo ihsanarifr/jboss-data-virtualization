@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:relational="http://www.metamatrix.com/metamodels/Relational">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:06a92ec4-fad7-4fee-83ea-85ed76cb3759" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational" modelType="PHYSICAL" ProducerName="Teiid Designer" ProducerVersion="11.0.1.Final-v20170208-2046-B4143">
+    <modelImports xmi:uuid="mmuuid:0426984b-8eda-4b79-946b-83508f4a5cfa" name="SimpleDatatypes-instance" modelLocation="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:4770864b-82ca-467f-ba7a-bba357e173d7" name="XMLSchema" modelLocation="http://www.w3.org/2001/XMLSchema" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+  </mmcore:ModelAnnotation>
+  <mmcore:AnnotationContainer xmi:uuid="mmuuid:ba1f22d6-293f-4585-8789-c2998440299f">
+    <annotations xmi:uuid="mmuuid:bad13892-5b23-4717-aa9c-53f7c6e0308a" annotatedObject="mmuuid/06a92ec4-fad7-4fee-83ea-85ed76cb3759">
+      <tags xmi:uuid="mmuuid:b3e1c664-90a7-4357-8095-f6e3232ad5eb" key="connection:FlatFileHomeUrl" value="/home/ihsan/Documents/jboss-datavirtualization/data/csv"/>
+      <tags xmi:uuid="mmuuid:c4ac0f37-eec6-458b-abf8-4a2bffcbff6c" key="connectionProfile:connectionProfileName" value="StoreView"/>
+      <tags xmi:uuid="mmuuid:8a7baafc-e351-4c90-a2cb-e37e79f6576c" key="connection:FlatFileDelimeter" value="COMMA"/>
+      <tags xmi:uuid="mmuuid:18fa707c-79a0-4a71-8b06-8f92682f11e4" key="connectionProfile:connectionProfileProviderId" value="org.eclipse.datatools.connectivity.oda.flatfile"/>
+      <tags xmi:uuid="mmuuid:7f191c97-c93e-48a7-858d-13f0e7a1922f" key="translator:name" value="file"/>
+      <tags xmi:uuid="mmuuid:f4e4b4ed-f538-4c59-8e0f-580d7d336183" key="connection:FlatFileSecondLineDataType" value="NO"/>
+      <tags xmi:uuid="mmuuid:e9c9f412-47c1-4557-83f3-a223a6513d41" key="connectionProfile:connectionProfileInstanceID" value="7e153040-2768-11e8-bacb-fbe859a0fafc"/>
+      <tags xmi:uuid="mmuuid:da9d50db-f2b7-455d-85c1-4a4a0da63808" key="connection:FlatFileCharSet" value="UTF-8"/>
+      <tags xmi:uuid="mmuuid:d4c6fc6f-0bf2-46ab-bc5e-68976578201c" key="connection:FlatFileFirstLineColumnName" value="YES"/>
+      <tags xmi:uuid="mmuuid:5dc485a2-2aa9-4590-b586-49514a001d11" key="connectionProfile:connectionProfileDescription" value=""/>
+      <tags xmi:uuid="mmuuid:ffcf3c4b-c70c-4062-b2d4-53b0019b6d82" key="connectionProfile:connectionProfileCategory" value="org.eclipse.datatools.connectivity.oda.flatfile"/>
+      <tags xmi:uuid="mmuuid:022efbdf-0ecc-474e-8a7d-813938f51539" key="connection:JBossDsJndi" value="Stores"/>
+    </annotations>
+  </mmcore:AnnotationContainer>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:1588fc4f-e5a6-4678-8613-f282106a2d94">
+    <diagram xmi:uuid="mmuuid:ea6e4d88-4195-496d-b6ca-85f97e751a5c" type="packageDiagramType" target="mmuuid/06a92ec4-fad7-4fee-83ea-85ed76cb3759">
+      <diagramEntity xmi:uuid="mmuuid:f4542715-362f-4f86-871f-5cf503ba5d56" modelObject="mmuuid/d839a72f-0de6-4c92-9d37-5c4b4cb0f713" xPosition="10" yPosition="10"/>
+    </diagram>
+  </diagram:DiagramContainer>
+  <relational:Procedure xmi:uuid="mmuuid:d839a72f-0de6-4c92-9d37-5c4b4cb0f713" name="getTextFiles">
+    <parameters xmi:uuid="mmuuid:9c0342f7-7588-4214-89d3-65d8ebb02100" name="pathAndExt" length="4000">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </parameters>
+    <result xmi:uuid="mmuuid:b25a285f-6a7f-4026-a485-33bbcc6dee55" name="Result">
+      <columns xmi:uuid="mmuuid:342b8a38-b928-4c86-bb58-417e0966fb7e" name="file">
+        <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#clob"/>
+      </columns>
+      <columns xmi:uuid="mmuuid:6aea62a3-856c-46fe-8659-711478bc410c" name="filePath" length="4000">
+        <type href="http://www.w3.org/2001/XMLSchema#string"/>
+      </columns>
+    </result>
+  </relational:Procedure>
+</xmi:XMI>
