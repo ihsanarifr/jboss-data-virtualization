@@ -4,6 +4,7 @@
     <modelImports xmi:uuid="mmuuid:f21df6ee-886c-4520-a636-de40c1448d7f" name="XMLSchema" modelLocation="http://www.w3.org/2001/XMLSchema" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
     <modelImports xmi:uuid="mmuuid:722f7d84-5d55-49ff-9c7e-1926471af689" name="US_Customers_VBL" modelLocation="../VirtualBaseLayer/US_Customers_VBL.xmi" uuid="mmuuid:05b903cf-542a-4f22-b4aa-961a359d32c6" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
     <modelImports xmi:uuid="mmuuid:5e455f8f-87ed-465c-9aaf-3a7de07231cc" name="EU_Customers_VBL" modelLocation="../VirtualBaseLayer/EU_Customers_VBL.xmi" uuid="mmuuid:e1ed85f8-dffc-44a1-9970-d8055ee59324" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
+    <modelImports xmi:uuid="mmuuid:e32ecf29-5c43-428d-b03d-9945bf87662e" name="SimpleDatatypes-instance" modelLocation="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
   </mmcore:ModelAnnotation>
   <relational:BaseTable xmi:uuid="mmuuid:9478bb6d-1f75-4d21-a47f-4efea3f0d1a4" name="customer" supportsUpdate="false">
     <columns xmi:uuid="mmuuid:d8130afe-cc14-4240-aa20-eaf4f97a9e2f" name="customerid" nativeType="varchar" length="12" nullable="NO_NULLS" updateable="false" uniqueKeys="mmuuid/d4af2854-4f27-4a58-917c-9455dfc995fc">
@@ -94,6 +95,13 @@
         <aliases xmi:uuid="mmuuid:b69df777-88c5-4bdb-8989-d10414170d23" alias="customer" aliasedObject="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4"/>
       </helper>
       <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:a6a2b113-d752-4c39-847f-dcd7bb78ab14" outputs="mmuuid/00e4bd0f-e418-4971-8d04-db83d81ea03b"/>
+    </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:7156595e-fe11-4da1-b4bb-bbacb4875f5c" inputs="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4" outputs="mmuuid/f36585d3-5af5-42fa-b425-acb44a908d02" target="mmuuid/f36585d3-5af5-42fa-b425-acb44a908d02">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:f6ff7665-1a0e-416b-973e-0ff8e236e8cf">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:18de7020-67fd-4257-8e21-f3a55ee23404" selectSql="BEGIN&#xa;&#x9;SELECT XMLELEMENT(NAME customer, XMLAGG(XMLELEMENT(NAME info, XMLFOREST(AllCustomers.customer.firstname)))) AS xmlResult FROM AllCustomers.customer WHERE AllCustomers.customer.customerid = AllCustomers.GetFirstName.custId;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:4be4b939-0499-4229-9abf-88c26a783ae2" alias="customer" aliasedObject="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4"/>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:1af4bec5-3367-4f32-9fbf-cc6204e2bf3c" inputs="mmuuid/defe12ff-8725-43f0-a2df-c568fa1fb34c" outputs="mmuuid/e7db92e3-729a-4e5b-a80d-d109b79e7931"/>
     </transformationMappings>
   </transformation:TransformationContainer>
   <mmcore:AnnotationContainer xmi:uuid="mmuuid:aaaa1771-ada8-4cc5-9a34-30702f0f4eb2">
@@ -763,11 +771,16 @@
     <annotations xmi:uuid="mmuuid:9589c7f5-8e71-45c1-8efa-bb439f85316a" annotatedObject="mmuuid/3387d941-b07e-4248-b076-085bc273428d">
       <tags xmi:uuid="mmuuid:bdd96f5d-2097-4ee6-8e49-f9a82bd60aa7" key="en_US" value="The description of this procedure."/>
     </annotations>
+    <annotations xmi:uuid="mmuuid:4ac8b5a2-decc-40e3-95e0-b664dea14699" annotatedObject="mmuuid/f36585d3-5af5-42fa-b425-acb44a908d02">
+      <tags xmi:uuid="mmuuid:bc39860d-ab7f-4ebc-89a2-80fcccb08125" key="REST:METHOD" value="GET"/>
+      <tags xmi:uuid="mmuuid:3aa8cf0a-fd6a-4195-ba5c-80e45820d85e" key="REST:URI" value="/GetFirstName/{custId}"/>
+    </annotations>
   </mmcore:AnnotationContainer>
   <diagram:DiagramContainer xmi:uuid="mmuuid:9d45ec87-8065-48af-8079-bf02bd6907f5">
     <diagram xmi:uuid="mmuuid:d9a9a6b6-71aa-4eeb-9669-9da0d06cfc16" type="packageDiagramType" target="mmuuid/cf0d0c0b-88e8-4dbc-b3f9-38b20b603254">
       <diagramEntity xmi:uuid="mmuuid:6fc67a23-12ad-4ebd-b35c-456dc595eccd" modelObject="mmuuid/9478bb6d-1f75-4d21-a47f-4efea3f0d1a4" xPosition="10" yPosition="10"/>
       <diagramEntity xmi:uuid="mmuuid:f386c04a-8837-4e76-a256-27756a9f7527" modelObject="mmuuid/430f2637-9dda-4b7f-9b98-8a3a9fc61769" xPosition="573" yPosition="86"/>
+      <diagramEntity xmi:uuid="mmuuid:cfd6b2df-3621-488f-b4fe-7e590f49483f" modelObject="mmuuid/f36585d3-5af5-42fa-b425-acb44a908d02" xPosition="299" yPosition="149"/>
     </diagram>
   </diagram:DiagramContainer>
   <relational:Procedure xmi:uuid="mmuuid:430f2637-9dda-4b7f-9b98-8a3a9fc61769" name="GetCustomerName">
@@ -778,6 +791,17 @@
       <columns xmi:uuid="mmuuid:00e4bd0f-e418-4971-8d04-db83d81ea03b" name="name" length="100" radix="0">
         <nativeType xsi:nil="true"/>
         <type href="http://www.w3.org/2001/XMLSchema#string"/>
+      </columns>
+    </result>
+  </relational:Procedure>
+  <relational:Procedure xmi:uuid="mmuuid:f36585d3-5af5-42fa-b425-acb44a908d02" name="GetFirstName">
+    <parameters xmi:uuid="mmuuid:3efab9f8-637a-4cc5-ac14-0bf5d300e749" name="custId" length="12" nullable="NULLABLE_UNKNOWN" radix="0">
+      <type href="http://www.w3.org/2001/XMLSchema#string"/>
+    </parameters>
+    <result xmi:uuid="mmuuid:8848ac30-0248-4b23-b1cd-c74aa9639e87" name="xmlResult">
+      <columns xmi:uuid="mmuuid:e7db92e3-729a-4e5b-a80d-d109b79e7931" name="xmlResult" length="4000" radix="0">
+        <nativeType xsi:nil="true"/>
+        <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#XMLLiteral"/>
       </columns>
     </result>
   </relational:Procedure>
