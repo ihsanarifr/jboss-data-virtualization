@@ -773,7 +773,7 @@
     </annotations>
     <annotations xmi:uuid="mmuuid:4ac8b5a2-decc-40e3-95e0-b664dea14699" annotatedObject="mmuuid/f36585d3-5af5-42fa-b425-acb44a908d02">
       <tags xmi:uuid="mmuuid:bc39860d-ab7f-4ebc-89a2-80fcccb08125" key="REST:METHOD" value="GET"/>
-      <tags xmi:uuid="mmuuid:3aa8cf0a-fd6a-4195-ba5c-80e45820d85e" key="REST:URI" value="/GetFirstName/{custId}"/>
+      <tags xmi:uuid="mmuuid:3aa8cf0a-fd6a-4195-ba5c-80e45820d85e" key="REST:URI" value="GetFirstName/{custId}"/>
     </annotations>
   </mmcore:AnnotationContainer>
   <diagram:DiagramContainer xmi:uuid="mmuuid:9d45ec87-8065-48af-8079-bf02bd6907f5">
