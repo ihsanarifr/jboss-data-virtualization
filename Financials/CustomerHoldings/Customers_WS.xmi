@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:mmws="http://www.metamatrix.com/metamodels/WebService" xmlns:transformation="http://www.metamatrix.com/metamodels/Transformation">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:4c9f99ea-5839-47c6-88fb-e02d72b7491c" primaryMetamodelUri="http://www.metamatrix.com/metamodels/WebService" modelType="VIRTUAL" ProducerName="Teiid Designer" ProducerVersion="11.0.1.Final-v20170208-2046-B4143">
+    <modelImports xmi:uuid="mmuuid:9168e9ac-ed07-4f74-87cc-7a0ad43b6186" name="CustomerHoldingsInput" modelLocation="CustomerHoldingsInput.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:dc5f0715-cbb7-42ad-b5d5-773f01a8fb24" name="CustomerHoldingsSchema" modelLocation="CustomerHoldingsSchema.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:0e41a138-bcbf-43de-9979-0e7e55a52521" name="CustomerHoldingsXML" modelLocation="CustomerHoldingsXML.xmi" uuid="mmuuid:76e3e02f-e86e-44a5-b6cc-27bd534eb66d" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument"/>
+  </mmcore:ModelAnnotation>
+  <mmws:Interface xmi:uuid="mmuuid:02fc5a13-db19-48a3-9e7a-82998a3b76ae" name="Customers">
+    <operations xmi:uuid="mmuuid:6a739ac2-9710-4c9c-b051-1b282a4a1dbd" name="getCustomers">
+      <input xmi:uuid="mmuuid:ca5d6c21-55a1-47bb-9beb-1ac7dad70000" name="CustomerID">
+        <contentElement href="CustomerHoldingsInput.xsd#//CustomerID;XSDElementDeclaration"/>
+      </input>
+      <output xmi:uuid="mmuuid:0ae32895-cf77-4301-beef-6976a52dd9de" name="Customers">
+        <contentElement href="CustomerHoldingsSchema.xsd#//Customers;XSDElementDeclaration"/>
+        <samples xmi:uuid="mmuuid:16028c0c-59b2-446e-985c-fe94618dbfa4"/>
+        <xmlDocument href="CustomerHoldingsXML.xmi#mmuuid/331961cc-1e55-4a98-b6e7-3a901508fda4"/>
+      </output>
+    </operations>
+  </mmws:Interface>
+  <transformation:TransformationContainer xmi:uuid="mmuuid:99410ee0-615d-4eee-9b4b-28db44ce71fc">
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:82510219-5a19-4852-bd44-0f31b6dcf74d" outputs="mmuuid/6a739ac2-9710-4c9c-b051-1b282a4a1dbd" target="mmuuid/6a739ac2-9710-4c9c-b051-1b282a4a1dbd">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:80377890-f09c-4f1e-a312-a38a94863780">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:27882a91-799e-4bc4-af9c-9b6792d428d6" selectSql="BEGIN&#xa;&#x9;DECLARE string VARIABLES.IN_CustomerID = xpathvalue(Customers_WS.Customers.getCustomers.CustomerID, '/*:CustomerID');&#xa;&#x9;SELECT * FROM CustomerHoldingsXML.CustomersDocument WHERE VARIABLES.IN_CustomerID = CustomerHoldingsXML.CustomersDocument.Customers.Customer.CustomerID;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:08c6152c-4cf3-47da-8958-757f2fd72941" alias="CustomersDocument">
+          <aliasedObject href="CustomerHoldingsXML.xmi#mmuuid/331961cc-1e55-4a98-b6e7-3a901508fda4"/>
+        </aliases>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:836f3571-943f-431d-8353-b5cbceec7dc3" outputs="mmuuid/16028c0c-59b2-446e-985c-fe94618dbfa4"/>
+      <inputs href="CustomerHoldingsXML.xmi#mmuuid/331961cc-1e55-4a98-b6e7-3a901508fda4"/>
+    </transformationMappings>
+  </transformation:TransformationContainer>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:4fda8f76-794e-4542-901c-1ec84726b75a">
+    <diagram xmi:uuid="mmuuid:f24e1449-e554-477e-acb6-6935cad28faa" type="packageDiagramType" target="mmuuid/4c9f99ea-5839-47c6-88fb-e02d72b7491c">
+      <diagramEntity xmi:uuid="mmuuid:4c528ed8-f21b-4ccb-83b5-dc8877a768f8" modelObject="mmuuid/02fc5a13-db19-48a3-9e7a-82998a3b76ae" xPosition="10" yPosition="10"/>
+    </diagram>
+    <diagram xmi:uuid="mmuuid:c9423c3a-c3ed-4541-bdfe-fbf11b571ff2" type="packageDiagramType" target="mmuuid/02fc5a13-db19-48a3-9e7a-82998a3b76ae">
+      <diagramEntity xmi:uuid="mmuuid:39904d84-1d59-40e7-ae67-13f4e767f81a" modelObject="mmuuid/6a739ac2-9710-4c9c-b051-1b282a4a1dbd" xPosition="10" yPosition="10"/>
+    </diagram>
+  </diagram:DiagramContainer>
+</xmi:XMI>
