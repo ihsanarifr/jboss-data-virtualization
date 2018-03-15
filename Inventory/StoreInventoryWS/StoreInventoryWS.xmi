@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:mmws="http://www.metamatrix.com/metamodels/WebService" xmlns:transformation="http://www.metamatrix.com/metamodels/Transformation">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:d4779b4c-d222-4e25-9369-ae93588dd580" primaryMetamodelUri="http://www.metamatrix.com/metamodels/WebService" modelType="VIRTUAL" ProducerName="Teiid Designer" ProducerVersion="11.0.1.Final-v20170208-2046-B4143">
+    <modelImports xmi:uuid="mmuuid:fbf87b56-ccb2-47c3-a172-7b52f8f515cb" name="StoreInventoryQuery" modelLocation="StoreInventoryQuery.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:3c1e7169-6d8a-48e5-904d-2e2fd498e308" name="StoreInventoryDocument" modelLocation="../StoreInventory/StoreInventoryDocument.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:bca20602-9f4e-43a6-90a5-db5816aee359" name="StoreInventoryXml" modelLocation="../StoreInventory/StoreInventoryXml.xmi" uuid="mmuuid:e8191dac-e2c8-48a7-b7b1-38103a806259" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument"/>
+  </mmcore:ModelAnnotation>
+  <mmws:Interface xmi:uuid="mmuuid:7b135d51-c963-47f7-81f1-bc1d93a78666" name="StoreInventory">
+    <operations xmi:uuid="mmuuid:327530c3-ced1-4216-855d-e8d83dbba557" name="getStoreInventory">
+      <input xmi:uuid="mmuuid:07643dc7-ec47-4921-9f2d-a0d0354427fa" name="StoreCode">
+        <contentElement href="StoreInventoryQuery.xsd#//StoreCode;XSDElementDeclaration"/>
+      </input>
+      <output xmi:uuid="mmuuid:441eb28a-16d5-45e4-8ee8-b46143618236" name="StoreInventory">
+        <contentElement href="../StoreInventory/StoreInventoryDocument.xsd#//StoreInventory;XSDElementDeclaration"/>
+        <samples xmi:uuid="mmuuid:d7638273-67f3-4103-8388-5065ef9abe87"/>
+        <xmlDocument href="../StoreInventory/StoreInventoryXml.xmi#mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670"/>
+      </output>
+    </operations>
+  </mmws:Interface>
+  <transformation:TransformationContainer xmi:uuid="mmuuid:251eaee1-565f-437c-a0e3-0e3675698112">
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:e8198feb-0c9c-4259-a111-231e88ea7e00" outputs="mmuuid/327530c3-ced1-4216-855d-e8d83dbba557" target="mmuuid/327530c3-ced1-4216-855d-e8d83dbba557">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:dd9c6026-4fd7-4d9d-929e-65600a78849c">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:f97e3b5f-8f9f-47c9-8063-2a69fb3503f3" selectSql="BEGIN&#xa;&#x9;DECLARE string VARIABLES.IN_StoreCode = xpathvalue(StoreInventoryWS.StoreInventory.getStoreInventory.StoreCode, '/*:StoreCode');&#xa;&#x9;SELECT * FROM StoreInventoryXml.StoreInventoryDocument WHERE VARIABLES.IN_StoreCode = StoreInventoryXml.StoreInventoryDocument.StoreInventory.Store.code;&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:6189c4e9-14f0-4e64-b8f0-a8c0b55c8b99" alias="StoreInventoryDocument">
+          <aliasedObject href="../StoreInventory/StoreInventoryXml.xmi#mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670"/>
+        </aliases>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:87efc076-4816-4f24-abb1-4f03d9522aa6" outputs="mmuuid/d7638273-67f3-4103-8388-5065ef9abe87"/>
+      <inputs href="../StoreInventory/StoreInventoryXml.xmi#mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670"/>
+    </transformationMappings>
+  </transformation:TransformationContainer>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:9021d47c-2142-4263-936a-9c8815dee298">
+    <diagram xmi:uuid="mmuuid:2d2fa96d-a8ee-415a-b44d-dc2f49d693ea" type="packageDiagramType" target="mmuuid/d4779b4c-d222-4e25-9369-ae93588dd580">
+      <diagramEntity xmi:uuid="mmuuid:76605bd3-5085-4e08-9bc6-23ac2085619b" modelObject="mmuuid/7b135d51-c963-47f7-81f1-bc1d93a78666" xPosition="10" yPosition="10"/>
+    </diagram>
+    <diagram xmi:uuid="mmuuid:3a318d13-4843-41fa-8ebb-8851248584d3" type="packageDiagramType" target="mmuuid/7b135d51-c963-47f7-81f1-bc1d93a78666">
+      <diagramEntity xmi:uuid="mmuuid:c101bd8c-3144-4dcb-af0c-a2035d607fe5" modelObject="mmuuid/327530c3-ced1-4216-855d-e8d83dbba557" xPosition="10" yPosition="10"/>
+    </diagram>
+  </diagram:DiagramContainer>
+</xmi:XMI>

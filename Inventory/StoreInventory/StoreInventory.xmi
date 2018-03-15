@@ -6,13 +6,12 @@
     <modelImports xmi:uuid="mmuuid:218c0034-a7b7-4dab-8289-8b16ec62c488" name="Store_VBL" modelLocation="../VirtualBaseLayer/Store_VBL.xmi" uuid="mmuuid:90654059-efe9-4699-b355-cd2a6abdef50" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
     <modelImports xmi:uuid="mmuuid:06b43217-e128-4371-a07b-02fba7d80360" name="Inventory_VBL" modelLocation="../VirtualBaseLayer/Inventory_VBL.xmi" uuid="mmuuid:96fd96cc-d627-47fe-a502-f54ba1ad7b37" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
     <modelImports xmi:uuid="mmuuid:f25dc43f-f1b8-41c4-a4cb-605d471ebd17" name="AllProducts" modelLocation="../AllProducts/AllProducts.xmi" uuid="mmuuid:58cc0c47-5e7d-4c70-bfff-948809463ed3" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
-    <modelImports xmi:uuid="mmuuid:4018940d-8b91-42ba-8f09-922e991ba449" name="StoreInventoryXml" modelLocation="StoreInventoryXml.xmi" uuid="mmuuid:e8191dac-e2c8-48a7-b7b1-38103a806259" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument"/>
   </mmcore:ModelAnnotation>
   <diagram:DiagramContainer xmi:uuid="mmuuid:bceaed96-2be2-4572-8874-b93d51a13f9f">
     <diagram xmi:uuid="mmuuid:9aa07348-15f8-489a-b7ad-578cf7346c18" type="packageDiagramType" target="mmuuid/ebceec07-d7a3-4629-b1eb-7a6fa665a492">
       <diagramEntity xmi:uuid="mmuuid:c61183e2-43c6-497b-8992-3eaa34ff9853" modelObject="mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224" xPosition="298" yPosition="57"/>
       <diagramEntity xmi:uuid="mmuuid:97c812a7-04e8-436c-99ac-c20cf281849f" modelObject="mmuuid/93b47bd4-6ea3-4c2b-afaa-dce3569898a7" xPosition="530" yPosition="52"/>
-      <diagramEntity xmi:uuid="mmuuid:080e998d-9297-475b-b0d7-6e01b79f39ee" modelObject="mmuuid/294b1429-182d-49e4-9965-bfd47c56d082" xPosition="48" yPosition="63"/>
+      <diagramEntity xmi:uuid="mmuuid:05b4cc9d-2e0b-495e-8a3c-3a170eeeb84f" modelObject="mmuuid/148beb85-10f6-4126-8abc-207058eff2b0" xPosition="43" yPosition="58"/>
     </diagram>
   </diagram:DiagramContainer>
   <mmcore:AnnotationContainer xmi:uuid="mmuuid:c1fdbd8a-b59c-4dd6-8bb6-336ce2f06366">
@@ -682,9 +681,9 @@
     <annotations xmi:uuid="mmuuid:a3bc0665-cbf8-4b6d-9a50-3fd49baf998c" annotatedObject="mmuuid/f7bfd7e9-4e53-4252-b353-af590ac0acdd">
       <tags xmi:uuid="mmuuid:b54ad295-4806-4f3c-9d10-e8955b4cf0e3" key="en_US" value="The description of this procedure."/>
     </annotations>
-    <annotations xmi:uuid="mmuuid:8d81621c-2927-4d88-81b5-4c26c0f8382c" annotatedObject="mmuuid/294b1429-182d-49e4-9965-bfd47c56d082">
-      <tags xmi:uuid="mmuuid:6dac0d76-47b5-46ef-b34a-171f02a296ea" key="REST:METHOD" value="GET"/>
-      <tags xmi:uuid="mmuuid:3215c09a-a6c0-4bc5-bca7-865d02fda41c" key="REST:URI" value="StoreInventory/Products/{storecode}"/>
+    <annotations xmi:uuid="mmuuid:1d7643d5-8261-48d6-940b-401cf702a0b4" annotatedObject="mmuuid/148beb85-10f6-4126-8abc-207058eff2b0">
+      <tags xmi:uuid="mmuuid:c8448192-eadf-4166-82bb-96915f1d1425" key="REST:METHOD" value="GET"/>
+      <tags xmi:uuid="mmuuid:47abef48-4508-483b-83da-98baae4dc6a4" key="REST:URI" value="StoreInventory/Products/{storecode}"/>
     </annotations>
   </mmcore:AnnotationContainer>
   <relational:BaseTable xmi:uuid="mmuuid:5a03b229-02ef-48b1-b575-02f9d6d0e224" name="product_inventory">
@@ -763,15 +762,12 @@
       </helper>
       <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:a6923cf9-c366-44e8-9040-eacdbdfdfd3e" inputs="mmuuid/3a917d44-5597-4bf4-907e-3a18b7a1e60d mmuuid/6f950be6-178d-4ad9-ab32-e603828096c5" outputs="mmuuid/3f3020e6-91e1-4df3-bcc7-70397c01ba60"/>
     </transformationMappings>
-    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:c844c3b0-f8fe-4e91-93bc-09a870a2f4cd" outputs="mmuuid/294b1429-182d-49e4-9965-bfd47c56d082" target="mmuuid/294b1429-182d-49e4-9965-bfd47c56d082">
-      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:30530bb5-a2f6-49b7-a2c0-b86f8f7f47a3">
-        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:aecb17df-222d-48ff-b70c-45c334d3ce91" selectSql="BEGIN&#xa;&#x9;SELECT * FROM StoreInventoryXml.StoreInventoryDocument WHERE StoreInventoryXml.StoreInventoryDocument.StoreInventory.Store.code = StoreInventory.getStoreInventoryList.storecode;&#xa;END"/>
-        <aliases xmi:uuid="mmuuid:48abd4e3-22a9-4f03-806e-87d506ea8cb3" alias="StoreInventoryDocument">
-          <aliasedObject href="StoreInventoryXml.xmi#mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670"/>
-        </aliases>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:04e5d703-3fcc-4cd8-8c16-10f06b44eee7" inputs="mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224" outputs="mmuuid/148beb85-10f6-4126-8abc-207058eff2b0" target="mmuuid/148beb85-10f6-4126-8abc-207058eff2b0">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:c4f95fec-dd2e-4979-a287-b77f78f733e7">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:528314d1-310e-462e-a90a-e5a81de6a258" selectSql="BEGIN&#xa;&#x9;SELECT XMLELEMENT(NAME product, XMLAGG(XMLELEMENT(NAME info, XMLFOREST(StoreInventory.product_inventory.store, StoreInventory.product_inventory.location)))) AS xmlResult FROM StoreInventory.product_inventory WHERE StoreInventory.getStoreInventoryList.storecode = StoreInventory.product_inventory.storecode;&#xa;&#x9;/*SELECT * FROM StoreInventory.product_inventory WHERE StoreInventory.getStoreInventoryList.storecode = StoreInventory.product_inventory.storecode;&#xa;&#xa;SELECT XMLELEMENT(NAME customer, XMLAGG(XMLELEMENT(NAME info, XMLFOREST(AllCustomers.customer.firstname)))) AS xmlResult FROM AllCustomers.customer WHERE AllCustomers.customer.customerid = AllCustomers.GetFirstName.custId;*/&#xa;END"/>
+        <aliases xmi:uuid="mmuuid:47b3b59b-3bc5-4fe7-ac7f-c76ed7fb344a" alias="product_inventory" aliasedObject="mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224"/>
       </helper>
-      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:6856aa66-9570-42b2-ab9c-717abbbbfb0e" outputs="mmuuid/8c96edf5-3303-48f2-972f-f1e5d39bbff7"/>
-      <inputs href="StoreInventoryXml.xmi#mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670"/>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:e208e102-708a-45af-b246-a0eccec8b783" inputs="mmuuid/72f816f1-55b8-483f-9780-7a81ba33db66 mmuuid/a16b92ca-4dd8-4d1b-9822-d2cb92c1cb81" outputs="mmuuid/485bcba6-dbf6-4df4-a6f1-b089c88e36e0"/>
     </transformationMappings>
   </transformation:TransformationContainer>
   <relational:Procedure xmi:uuid="mmuuid:93b47bd4-6ea3-4c2b-afaa-dce3569898a7" name="getInventoryValue">
@@ -787,12 +783,12 @@
       </columns>
     </result>
   </relational:Procedure>
-  <relational:Procedure xmi:uuid="mmuuid:294b1429-182d-49e4-9965-bfd47c56d082" name="getStoreInventoryList">
-    <parameters xmi:uuid="mmuuid:3778d64b-d01e-4d30-8ba5-ad01ab29ce5f" name="storecode" length="100" nullable="NULLABLE_UNKNOWN" radix="0">
+  <relational:Procedure xmi:uuid="mmuuid:148beb85-10f6-4126-8abc-207058eff2b0" name="getStoreInventoryList">
+    <parameters xmi:uuid="mmuuid:9dc7bf22-f725-4bde-b82f-89eb2db5ad0f" name="storecode" length="40" nullable="NULLABLE_UNKNOWN" radix="0">
       <type href="http://www.w3.org/2001/XMLSchema#string"/>
     </parameters>
-    <result xmi:uuid="mmuuid:3b95a91c-e955-4e7f-8694-fdd1e23b5d50" name="NewProcedureResult">
-      <columns xmi:uuid="mmuuid:8c96edf5-3303-48f2-972f-f1e5d39bbff7" name="xml" length="2147483647">
+    <result xmi:uuid="mmuuid:64f32978-5430-4c92-866d-5ea8fb0bd26f" name="resultXML">
+      <columns xmi:uuid="mmuuid:485bcba6-dbf6-4df4-a6f1-b089c88e36e0" name="xmlResult" length="4000">
         <type href="http://www.metamatrix.com/metamodels/SimpleDatatypes-instance#XMLLiteral"/>
       </columns>
     </result>
