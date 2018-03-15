@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diagram="http://www.metamatrix.com/metamodels/Diagram" xmlns:mmcore="http://www.metamatrix.com/metamodels/Core" xmlns:transformation="http://www.metamatrix.com/metamodels/Transformation" xmlns:vxmldoc="http://www.metamatrix.com/metamodels/XmlDocument" xmlns:xsd="http://www.eclipse.org/xsd/2002/XSD">
+  <mmcore:ModelAnnotation xmi:uuid="mmuuid:e8191dac-e2c8-48a7-b7b1-38103a806259" primaryMetamodelUri="http://www.metamatrix.com/metamodels/XmlDocument" modelType="VIRTUAL" ProducerName="Teiid Designer" ProducerVersion="11.0.1.Final-v20170208-2046-B4143">
+    <modelImports xmi:uuid="mmuuid:8c2c5632-eb08-4a4b-a986-a0f2ae84b3c3" name="StoreInventoryDocument" modelLocation="StoreInventoryDocument.xsd" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:018e5fac-68c9-46cc-b94f-a0aeb362ed27" name="XMLSchema" modelLocation="http://www.w3.org/2001/XMLSchema" modelType="TYPE" primaryMetamodelUri="http://www.eclipse.org/xsd/2002/XSD"/>
+    <modelImports xmi:uuid="mmuuid:c33d9ab4-008c-480c-bc23-1c4e8a6e5860" name="StoreInventory" modelLocation="StoreInventory.xmi" uuid="mmuuid:ebceec07-d7a3-4629-b1eb-7a6fa665a492" modelType="VIRTUAL" primaryMetamodelUri="http://www.metamatrix.com/metamodels/Relational"/>
+  </mmcore:ModelAnnotation>
+  <vxmldoc:XmlDocument xmi:uuid="mmuuid:cac5561a-22bc-48cf-8713-a68ef0604670" name="StoreInventoryDocument">
+    <root xmi:uuid="mmuuid:b464a4d4-7721-48d6-98e4-764d0d57869a" name="StoreInventory" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreInventory;XSDElementDeclaration"/>
+      <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:b80529a0-62f8-486e-80cc-d28e2425312c">
+        <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:65b8e0f7-60c4-49a3-b30d-3ff8386281d7" name="Store" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+          <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreInventoryType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Store;XSDElementDeclaration"/>
+          <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:5ac226b0-51c0-4ffb-a650-25b72cee9e83">
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:9451a7d8-7ac8-4ac0-908f-b8fe29781eb6" name="code" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle/code;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:27e56c84-c6df-4c0e-9706-5a6d85e8cdf9" name="name" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=1/name;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:d9248482-3909-4279-999c-4a0aec45ae32" name="location" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=2/location;XSDElementDeclaration"/>
+            </entities>
+            <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:11c704fc-dd6c-4596-818a-764ca812bf03" name="Products" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+              <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//StoreType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle=3/Products;XSDElementDeclaration"/>
+              <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:d07700a7-9dde-4825-96c6-111c7f1ea04e">
+                <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:70164e19-6c79-4655-bff5-85e4c2139ea7" name="Product" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                  <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductListType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle/Product;XSDElementDeclaration"/>
+                  <entities xsi:type="vxmldoc:XmlSequence" xmi:uuid="mmuuid:a3130e22-fc2e-4542-aa2f-42fc8cee7d9b">
+                    <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:9f40bf46-bcd8-4760-9294-e54cab7f4283" name="code" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle/code;XSDElementDeclaration"/>
+                    </entities>
+                    <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:d81f5c8a-6bfe-492f-b9e3-2d582189a74e" name="desc" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=1/desc;XSDElementDeclaration"/>
+                    </entities>
+                    <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:f58a8797-6a9a-4659-bccf-cfd236aead9a" name="price" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=2/price;XSDElementDeclaration"/>
+                    </entities>
+                    <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:763bd042-4cfb-440d-b368-e1eb0ae0cc70" name="quantity" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=3/quantity;XSDElementDeclaration"/>
+                    </entities>
+                    <entities xsi:type="vxmldoc:XmlElement" xmi:uuid="mmuuid:e841f23e-cdd2-4741-a0c4-0278efff2ed9" name="value" namespace="mmuuid/7a98c77d-a334-49ef-be87-4a0b94ee5246">
+                      <xsdComponent xsi:type="xsd:XSDElementDeclaration" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=4/value;XSDElementDeclaration"/>
+                    </entities>
+                    <xsdComponent xsi:type="xsd:XSDModelGroup" href="StoreInventoryDocument.xsd#//ProductType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup"/>
+                  </entities>
+                </entities>
+                <xsdComponent xsi:type="xsd:XSDModelGroup" href="StoreInventoryDocument.xsd#//ProductListType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup"/>
+              </entities>
+            </entities>
+            <xsdComponent xsi:type="xsd:XSDModelGroup" href="StoreInventoryDocument.xsd#//StoreType;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup"/>
+          </entities>
+        </entities>
+        <xsdComponent xsi:type="xsd:XSDModelGroup" href="StoreInventoryDocument.xsd#//StoreInventoryType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup"/>
+      </entities>
+      <declaredNamespaces xmi:uuid="mmuuid:90460db9-6a78-455a-85bb-905b2f3c6232" prefix="xsd" uri="http://www.w3.org/2001/XMLSchema"/>
+      <declaredNamespaces xmi:uuid="mmuuid:7a98c77d-a334-49ef-be87-4a0b94ee5246" prefix="tnsOutput" uri="http://jb450.jboss.org/inventory/products"/>
+    </root>
+  </vxmldoc:XmlDocument>
+  <transformation:TransformationContainer xmi:uuid="mmuuid:4708e11a-f758-46d3-bb40-9842f5f7df90">
+    <transformationMappings xsi:type="transformation:TreeMappingRoot" xmi:uuid="mmuuid:0756cdc1-2351-4e0c-a770-000b405f8511" inputs="mmuuid/eebe85a4-e77c-4c0d-8674-3c7a2999eb82" outputs="mmuuid/b80529a0-62f8-486e-80cc-d28e2425312c" target="mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670">
+      <nested xmi:uuid="mmuuid:f457834c-da34-4cbe-98ae-05f6a62ace8a" inputs="mmuuid/7ab7105c-1486-4ec8-bd5a-5ccbaed84010" outputs="mmuuid/9451a7d8-7ac8-4ac0-908f-b8fe29781eb6"/>
+      <nested xmi:uuid="mmuuid:2091c6ed-066b-4496-91b1-c753a06159b1" inputs="mmuuid/d45be1f6-fc1e-4e46-9225-e80260197db7" outputs="mmuuid/27e56c84-c6df-4c0e-9706-5a6d85e8cdf9"/>
+      <nested xmi:uuid="mmuuid:8aca99da-5da3-4912-988f-4a716ff08548" inputs="mmuuid/72a0bfe7-e7ab-490a-ac83-90470934a4a4" outputs="mmuuid/d9248482-3909-4279-999c-4a0aec45ae32"/>
+    </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:da08ae83-0fe6-4c2e-940d-bf24fe177388" outputs="mmuuid/eebe85a4-e77c-4c0d-8674-3c7a2999eb82" target="mmuuid/eebe85a4-e77c-4c0d-8674-3c7a2999eb82">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:d416436b-aff1-4c73-8482-c9f5cdb7ea66">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:5b6372c0-26c2-411a-ae4d-7eeb908bb8e0" selectSql="SELECT&#xa;&#x9;&#x9;StoreInventory.product_inventory.storecode AS code, StoreInventory.product_inventory.store AS name, StoreInventory.product_inventory.location&#xa;&#x9;FROM&#xa;&#x9;&#x9;StoreInventory.product_inventory&#xa;&#x9;GROUP BY StoreInventory.product_inventory.storecode, StoreInventory.product_inventory.store, StoreInventory.product_inventory.location"/>
+        <aliases xmi:uuid="mmuuid:683e8820-bd8e-4f64-9cbb-e685bced0496" alias="product_inventory">
+          <aliasedObject href="StoreInventory.xmi#mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224"/>
+        </aliases>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:ff8d317d-2bc0-458d-a49b-dd1db921288a" outputs="mmuuid/7ab7105c-1486-4ec8-bd5a-5ccbaed84010">
+        <inputs href="StoreInventory.xmi#mmuuid/223d45e5-51e3-4937-b308-bfa3685d494b"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:5d47ce90-321d-407b-90eb-0088c13b9370" outputs="mmuuid/d45be1f6-fc1e-4e46-9225-e80260197db7">
+        <inputs href="StoreInventory.xmi#mmuuid/72f816f1-55b8-483f-9780-7a81ba33db66"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:5f58cc3e-f6fc-4c23-bd56-673ff389eabb" outputs="mmuuid/72a0bfe7-e7ab-490a-ac83-90470934a4a4">
+        <inputs href="StoreInventory.xmi#mmuuid/a16b92ca-4dd8-4d1b-9822-d2cb92c1cb81"/>
+      </nested>
+      <inputs href="StoreInventory.xmi#mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224"/>
+    </transformationMappings>
+    <transformationMappings xsi:type="transformation:TreeMappingRoot" xmi:uuid="mmuuid:53ab71cd-a40a-40ab-9c03-b365df562f42" inputs="mmuuid/0b885b4e-951a-4f4a-81c6-f8db82cfd515" outputs="mmuuid/d07700a7-9dde-4825-96c6-111c7f1ea04e" target="mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670">
+      <nested xmi:uuid="mmuuid:a4e9247b-1760-4de5-b40f-8d11c1f6cf9c" inputs="mmuuid/1bf54aed-3b1a-46cb-b095-f3cae2dcc2f3" outputs="mmuuid/9f40bf46-bcd8-4760-9294-e54cab7f4283"/>
+      <nested xmi:uuid="mmuuid:cb82b837-3bcb-4aa6-b320-1b76d5552511" inputs="mmuuid/4766b462-cab7-4075-bd6c-9519eb4d3e36" outputs="mmuuid/d81f5c8a-6bfe-492f-b9e3-2d582189a74e"/>
+      <nested xmi:uuid="mmuuid:3034eca3-343d-4f83-bc7b-59a01cbbdcdc" inputs="mmuuid/d1fd2bac-dc60-42b2-b2c3-c733973ce09c" outputs="mmuuid/f58a8797-6a9a-4659-bccf-cfd236aead9a"/>
+      <nested xmi:uuid="mmuuid:0c44c56a-0493-4b5b-9edd-53975ee5c0bb" inputs="mmuuid/1238ce4b-bb5c-494d-94bc-015655a97976" outputs="mmuuid/763bd042-4cfb-440d-b368-e1eb0ae0cc70"/>
+      <nested xmi:uuid="mmuuid:12f752a7-daac-4722-9570-8a4f02c49053" inputs="mmuuid/57c24cd2-7675-41f6-8a0f-50217c4e1bc4" outputs="mmuuid/e841f23e-cdd2-4741-a0c4-0278efff2ed9"/>
+    </transformationMappings>
+    <transformationMappings xsi:type="transformation:SqlTransformationMappingRoot" xmi:uuid="mmuuid:d8be6dee-99d2-459c-ad58-5bca94a6e1a3" outputs="mmuuid/0b885b4e-951a-4f4a-81c6-f8db82cfd515" target="mmuuid/0b885b4e-951a-4f4a-81c6-f8db82cfd515">
+      <helper xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:2d91408e-8723-4d4e-964a-567d491a17a1">
+        <nested xsi:type="transformation:SqlTransformation" xmi:uuid="mmuuid:d8b3b791-4e4b-4d03-aafd-08da7f721a95" selectSql="SELECT&#xa;&#x9;&#x9;StoreInventory.product_inventory.productcode AS code, StoreInventory.product_inventory.productdescription AS &quot;desc&quot;, StoreInventory.product_inventory.productprice AS price, convert(StoreInventory.product_inventory.productqty, long) AS quantity, (StoreInventory.product_inventory.productqty * StoreInventory.product_inventory.productprice) AS &quot;value&quot;&#xa;&#x9;FROM&#xa;&#x9;&#x9;StoreInventory.product_inventory&#xa;&#x9;WHERE&#xa;&#x9;&#x9;INPUTS.code = StoreInventory.product_inventory.storecode"/>
+        <aliases xmi:uuid="mmuuid:39b8175d-9768-4568-86db-d1e64129d57a" alias="product_inventory">
+          <aliasedObject href="StoreInventory.xmi#mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224"/>
+        </aliases>
+      </helper>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:b8530591-0c14-46ce-8269-df6fa4b1fede" outputs="mmuuid/1bf54aed-3b1a-46cb-b095-f3cae2dcc2f3">
+        <inputs href="StoreInventory.xmi#mmuuid/af7835f4-958e-4c41-b7fc-266e1e3c9459"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:9fbc4dd6-8094-4393-8aa7-da6d62041810" outputs="mmuuid/4766b462-cab7-4075-bd6c-9519eb4d3e36">
+        <inputs href="StoreInventory.xmi#mmuuid/5e12e32c-f764-41fd-b1e2-2e48d66fa749"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:e76ec983-476a-4f5d-af30-01ef40a2aa73" outputs="mmuuid/d1fd2bac-dc60-42b2-b2c3-c733973ce09c">
+        <inputs href="StoreInventory.xmi#mmuuid/6f950be6-178d-4ad9-ab32-e603828096c5"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:2a109d98-74ee-4040-9063-912196c17590" outputs="mmuuid/1238ce4b-bb5c-494d-94bc-015655a97976">
+        <inputs href="StoreInventory.xmi#mmuuid/3a917d44-5597-4bf4-907e-3a18b7a1e60d"/>
+      </nested>
+      <nested xsi:type="transformation:TransformationMapping" xmi:uuid="mmuuid:5d86fd8e-bc6d-42e0-94de-154bc603c913" outputs="mmuuid/57c24cd2-7675-41f6-8a0f-50217c4e1bc4">
+        <inputs href="StoreInventory.xmi#mmuuid/3a917d44-5597-4bf4-907e-3a18b7a1e60d"/>
+        <inputs href="StoreInventory.xmi#mmuuid/6f950be6-178d-4ad9-ab32-e603828096c5"/>
+      </nested>
+      <inputs href="StoreInventory.xmi#mmuuid/5a03b229-02ef-48b1-b575-02f9d6d0e224"/>
+    </transformationMappings>
+  </transformation:TransformationContainer>
+  <transformation:MappingClassSetContainer xmi:uuid="mmuuid:351f71c6-c9b1-459e-92b3-6cf1142000b4">
+    <mappingClassSets xmi:uuid="mmuuid:65af0071-a3b1-40d9-ada1-fd668689db8a" target="mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670">
+      <mappingClasses xmi:uuid="mmuuid:eebe85a4-e77c-4c0d-8674-3c7a2999eb82" name="Store">
+        <columns xmi:uuid="mmuuid:7ab7105c-1486-4ec8-bd5a-5ccbaed84010" name="code">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:d45be1f6-fc1e-4e46-9225-e80260197db7" name="name">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:72a0bfe7-e7ab-490a-ac83-90470934a4a4" name="location">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <inputSet xmi:uuid="mmuuid:ab734e3d-470e-4f79-b90f-9e55154afb63"/>
+      </mappingClasses>
+      <mappingClasses xmi:uuid="mmuuid:0b885b4e-951a-4f4a-81c6-f8db82cfd515" name="Product">
+        <columns xmi:uuid="mmuuid:1bf54aed-3b1a-46cb-b095-f3cae2dcc2f3" name="code">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:4766b462-cab7-4075-bd6c-9519eb4d3e36" name="desc">
+          <type href="http://www.w3.org/2001/XMLSchema#string"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:d1fd2bac-dc60-42b2-b2c3-c733973ce09c" name="price">
+          <type href="http://www.w3.org/2001/XMLSchema#decimal"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:1238ce4b-bb5c-494d-94bc-015655a97976" name="quantity">
+          <type href="http://www.w3.org/2001/XMLSchema#long"/>
+        </columns>
+        <columns xmi:uuid="mmuuid:57c24cd2-7675-41f6-8a0f-50217c4e1bc4" name="value">
+          <type href="http://www.w3.org/2001/XMLSchema#decimal"/>
+        </columns>
+        <inputSet xmi:uuid="mmuuid:9f91da3a-9d3b-48f1-9a57-d286a766679c">
+          <inputParameters xmi:uuid="mmuuid:c8eff378-e017-41d9-a7a1-1b15f06aafb6" name="code">
+            <type href="http://www.w3.org/2001/XMLSchema#string"/>
+          </inputParameters>
+        </inputSet>
+      </mappingClasses>
+      <inputBinding xmi:uuid="mmuuid:8f9b489d-b8a0-44ae-81b6-4b95b3d4783f" inputParameter="mmuuid/c8eff378-e017-41d9-a7a1-1b15f06aafb6" mappingClassColumn="mmuuid/7ab7105c-1486-4ec8-bd5a-5ccbaed84010"/>
+    </mappingClassSets>
+  </transformation:MappingClassSetContainer>
+  <mmcore:AnnotationContainer xmi:uuid="mmuuid:66f15590-7628-4d68-a1ad-c526d8ffbf89"/>
+  <diagram:DiagramContainer xmi:uuid="mmuuid:8622c8f7-0bfb-4305-b597-ad9d0fb90a5c">
+    <diagram xmi:uuid="mmuuid:e5cca581-5b2c-4fb2-a043-95b004b2aac4" type="packageDiagramType" target="mmuuid/e8191dac-e2c8-48a7-b7b1-38103a806259">
+      <diagramEntity xmi:uuid="mmuuid:4cbd402b-da1c-4fdb-b5e8-8295581d27f6" modelObject="mmuuid/cac5561a-22bc-48cf-8713-a68ef0604670" xPosition="10" yPosition="10"/>
+    </diagram>
+  </diagram:DiagramContainer>
+</xmi:XMI>

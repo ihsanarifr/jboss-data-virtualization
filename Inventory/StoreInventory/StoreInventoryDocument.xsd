@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://jb450.jboss.org/inventory/products"
+    xmlns:tnsOutput="http://jb450.jboss.org/inventory/products" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="StoreInventory" type="tnsOutput:StoreInventoryType"/>
+<xsd:complexType name="StoreInventoryType">
+  <xsd:complexContent>
+  <xsd:restriction base="xsd:anyType">
+    <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="Store" type="tnsOutput:StoreType"/>
+    </xsd:sequence>
+  </xsd:restriction>
+</xsd:complexContent>
+</xsd:complexType>
+    <xsd:complexType name="StoreType">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="code" type="xsd:string"/>
+                    <xsd:element name="name" type="xsd:string"/>
+                    <xsd:element name="location" type="xsd:string"/>
+                    <xsd:element name="Products" type="tnsOutput:ProductListType"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProductListType">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence maxOccurs="unbounded" minOccurs="1">
+                    <xsd:element name="Product" type="tnsOutput:ProductType"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ProductType">
+        <xsd:complexContent>
+            <xsd:restriction base="xsd:anyType">
+                <xsd:sequence>
+                    <xsd:element name="code" type="xsd:string"/>
+                    <xsd:element name="desc" type="xsd:string"/>
+                    <xsd:element name="price" type="xsd:decimal"/>
+                    <xsd:element name="quantity" type="xsd:long"/>
+                    <xsd:element name="value" type="xsd:decimal"/>
+                </xsd:sequence>
+            </xsd:restriction>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>
