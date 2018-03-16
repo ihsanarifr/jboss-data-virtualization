@@ -684,6 +684,7 @@
     <annotations xmi:uuid="mmuuid:1d7643d5-8261-48d6-940b-401cf702a0b4" annotatedObject="mmuuid/148beb85-10f6-4126-8abc-207058eff2b0">
       <tags xmi:uuid="mmuuid:c8448192-eadf-4166-82bb-96915f1d1425" key="REST:METHOD" value="GET"/>
       <tags xmi:uuid="mmuuid:47abef48-4508-483b-83da-98baae4dc6a4" key="REST:URI" value="StoreInventory/Products/{storecode}"/>
+      <tags xmi:uuid="mmuuid:5f9345b9-5a4e-46ee-adff-7b9ab7737e6d" key="REST:DESCRIPTION" value="Product Inventory where Product Code is {storecode}"/>
     </annotations>
   </mmcore:AnnotationContainer>
   <relational:BaseTable xmi:uuid="mmuuid:5a03b229-02ef-48b1-b575-02f9d6d0e224" name="product_inventory">
