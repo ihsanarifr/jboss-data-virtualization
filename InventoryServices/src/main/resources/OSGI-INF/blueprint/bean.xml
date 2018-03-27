@@ -9,15 +9,16 @@
 			<bean class="org.apache.camel.component.olingo2.Olingo2Configuration">
 				<property name="httpHeaders">
 					<map>
-						<entry key="Authorization" value="${odata.auth}" />
-						<entry key="Accept" value="${odata.accept}" />
-						<entry key="ContentType" value="${odata.contentType}" />
+						<entry key="Authorization" value="Basic dGVpaWRVc2VyOmFkbWluQDEyMzQ1" />
+						<entry key="Accept" value="*/*" />
+						<entry key="ContentType" value="application/atom+xml;charset=utf-8" />
 					</map>
 				</property>
-				<property name="serviceUri" value="${odata.InventoryVDB}" />
+				<property name="serviceUri" value="http://localhost:8080/odata/Inventory" />
 			</bean>
 		</property>
 	</bean>
+
 	<bean class="id.co.asyst.service.aggreator.ArrayListAggregationStrategy"
 		id="ArrayListAggregationStrategy" />
 	<bean class="org.apache.commons.dbcp.BasicDataSource"
@@ -27,12 +28,14 @@
 		<property name="username" value="${db.username}" />
 		<property name="password" value="${db.password}" />
 	</bean>
+
 	<bean class="org.apache.camel.component.servlet.osgi.OsgiServletRegisterer"
 		destroy-method="unregister" id="servletRegisterer" init-method="register">
 		<property name="alias" value="/rest" />
 		<property name="httpService" ref="httpService" />
 		<property name="servlet" ref="camelServlet" />
 	</bean>
+
 	<bean class="org.apache.camel.component.servlet.CamelHttpTransportServlet"
 		id="camelServlet" scope="singleton" />
 </blueprint>

@@ -7,7 +7,7 @@
 	<artifactId>query-service-inventory</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<name>Query Service</name>
+	<name>Query Service Inventory</name>
 	<description>Query Service for JDV and JDG</description>
 	<licenses>
 		<license>
