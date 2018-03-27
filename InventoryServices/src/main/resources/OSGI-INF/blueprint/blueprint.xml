@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd                            http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+    <reference id="httpService" interface="org.osgi.service.http.HttpService"/>
+    <camelContext id="serviceInventory" xmlns="http://camel.apache.org/schema/blueprint">
+        <propertyPlaceholder id="configuration" location="configuration.properties"/>
+        <restConfiguration apiContextListing="true"
+            apiContextPath="api-docs" component="servlet"
+            contextPath="/rest" enableCORS="true" host="0.0.0.0" port="8181"/>
+        <rest path="/query">
+            <get produces="application/json" uri="/odata">
+                <to uri="direct:queryOdata"/>
+            </get>
+        </rest>
+        <route id="QueryJDVOdata">
+            <!-- <to id="_to1" uri="odata://read/Spiner_VBL_NewGen.TOS_CONTAINER_LAST_STACK?$format=json"/> -->
+            <!--  <to id="_to1" uri="odata://read/products"/>
+            <to id="_to2" pattern="InOnly" uri="vm:common"/>
+            <split id="_split1"
+                strategyRef="ArrayListAggregationStrategy" streaming="true">
+                <simple>${body.getEntries()}</simple>
+                <setBody id="_setBody1">
+                    <simple>${body.getProperties()}</simple>
+                </setBody>
+            </split> -->
+            <from id="_from3" uri="direct:queryOdata"/>
+            <setBody id="_setBody2">
+                <simple id="_simple1">test</simple>
+            </setBody>
+            <marshal id="_marshal1">
+                <json library="Jackson"/>
+            </marshal>
+        </route>
+        <!--         <route id="jdvSpinerQuery">
+            <from id="_from5" uri="direct:queryJdv"/>
+            <to id="_to8" uri="sql:Select * from AllProducts.products?dataSource=dsJdv"/>
+            <marshal id="_marshal2">
+                <json library="Jackson"/>
+            </marshal>
+        </route> -->
+    </camelContext>
+</blueprint>
